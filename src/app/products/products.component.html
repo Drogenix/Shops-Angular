@@ -1,0 +1,19 @@
+<div class="container-fluid px-4 mt-5">
+  <h1 class="text-center">Список всех продуктов в системе</h1>
+  <div class="row row-border">
+    <div class="col-12 col-sm-4 my-4" *ngFor="let product of products; let i = index">
+      <div class="d-flex col-border justify-content-between">
+        <div class="d-block p-3 ">
+          <h2 class="text-center">Товар "{{product.name}}"</h2>
+          <p class="text-dark">Цвет: {{product.color}}</p>
+          <p class="text-success fw-bolder">Цена: {{product.price}}</p>
+          <div class="d-flex">
+            <a routerLink="../products/{{product.id}}" class="btn btn-primary me-3">Детали</a>
+            <button (click)="deleteProduct(product.id, i)" class="btn btn-danger">Удалить</button>
+            <a routerLink="../products/edit/{{product.id}}" class="btn btn-success ms-3">Изменить</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

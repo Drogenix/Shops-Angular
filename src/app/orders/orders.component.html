@@ -1,0 +1,25 @@
+<div class="container-fluid mt-5 px-4">
+  <h1 class="display-5 text-center text-dark mb-4">Список заказов</h1>
+  <div class="d-flex justify-content-center">
+    <button (click)="showActive()" class="btn btn-dark text-light me-5">Активные</button>
+    <button (click)="showComplete()" class="btn btn-dark text-light">Завершённые</button>
+  </div>
+  <div class="container-sm mt-5">
+    <h2>{{sectionName}}</h2>
+    <div class="row row-border py-4">
+      <div class="col-12 p-3 col-border mb-4" *ngFor="let item of orders;let i = index">
+        <h2 class="text-end">Заказ номер {{item.id}}</h2>
+        <h2>Заказчик:</h2>
+        <div class="d-flex">
+          <p class="me-5">Имя: {{item.customer.name}}</p>
+          <p>Адрес: {{item.customer.city + ' ул. ' + item.customer.street + ', дом ' + item.customer.homeNum}}</p>
+        </div>
+        <h3>Количество товаров в заказе: {{item.products.length}}</h3>
+        <div class="d-flex justify-content-between">
+          <a routerLink="../orders/{{item.id}}" class="d-flex justify-content-center btn btn-primary">Детали</a>
+          <button *ngIf="item.status == 0" (click)="completeOrder(item.id)" class="btn btn-success">Отметить как выполненный</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

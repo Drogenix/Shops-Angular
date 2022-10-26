@@ -1,0 +1,25 @@
+<div class="container-sm px-4 mt-5">
+  <h1 class="text-center">Редактировать продукт  {{product.id}}</h1>
+  <form [formGroup]="form" (ngSubmit)="sendForm()">
+    <div class="form-group">
+      <label for="nameInput">Название продукта</label>
+      <input type="" formControlName="name" class="form-control" id="nameInput">
+      <small class="form-text text-muted">Длина от 6 до 20 символов</small>
+    </div>
+    <div class="form-group">
+      <label  for="shopInput" >Номер магазина</label>
+      <input formControlName="shopId" class="form-control" id="shopInput">
+    </div>
+    <div class="form-group">
+      <label for="colorInput">Цвет</label>
+      <input formControlName="color" class="form-control" id="colorInput">
+      <small class="form-text text-muted">Длина от 6 до 20 символов</small>
+    </div>
+    <div class="form-group">
+      <label  for="priceInput" >Цена</label>
+      <input formControlName="price" pattern="^\d*(\,\d{0,2})?$" class="form-control" id="priceInput">
+      <small class="form-text text-muted">Не более 5 цифр, с долей через запятую</small>
+    </div>
+    <button [disabled]="form.invalid" type="submit" class="btn btn-primary mt-3">Submit</button>
+  </form>
+</div>

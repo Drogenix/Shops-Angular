@@ -1,0 +1,12 @@
+<div class="container-fluid px-4 mt-5">
+  <h1 class="text-center">Список товаров магазина "{{shop.name}}"</h1>
+  <div class="row row-border">
+    <div class="col-12 col-sm-4 my-4" *ngFor="let item of shop.products">
+      <div class="d-block p-3 col-border">
+        <h2 class="text-center">Товар "{{item.name}}"</h2>
+        <p class="text-dark">Цвет: {{item.color}}</p>
+        <p class="text-success fw-bolder">Цена: {{item.price}}</p>
+      </div>
+    </div>
+  </div>
+</div>

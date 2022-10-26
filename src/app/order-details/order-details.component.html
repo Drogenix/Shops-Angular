@@ -1,0 +1,19 @@
+<div class="container-fluid px-4 mt-5">
+  <h1 class="text-center">Информация о заказчике</h1>
+  <div class="d-flex flex-column my-4">
+      <p>Имя: {{order.customer.name}}</p>
+      <p>Город: {{order.customer.city}}</p>
+      <p>Улица: {{order.customer.street}}</p>
+      <p>Номер дома: {{order.customer.homeNum}}</p>
+  </div>
+  <h1 class="text-center">Список товаров заказа номер "{{order.id}}"</h1>
+  <div class="row row-border">
+    <div class="col-12 col-sm-4 my-4" *ngFor="let item of order.products">
+      <div class="d-block p-3 col-border">
+        <h2 class="text-center">Товар "{{item.product.name}}"</h2>
+        <p class="text-dark">Цвет: {{item.product.color}}</p>
+        <p class="text-success fw-bolder">Цена: {{item.product.price}}</p>
+      </div>
+    </div>
+  </div>
+</div>

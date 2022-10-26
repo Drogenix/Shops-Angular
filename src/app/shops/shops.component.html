@@ -1,0 +1,13 @@
+<div class="container-fluid px-4 mt-5">
+  <h1 class="text-center">Список магазинов</h1>
+  <div class="row row-border">
+    <div class="col-12 col-sm-4 my-4" *ngFor="let item of shops; let i = index">
+      <div class="d-block p-4 col-border">
+        <h2 class="text-center">Магазин "{{item.name}}"</h2>
+        <p class="text-dark">Адрес: {{item.city + ' ' + item.street + ' st. ' + item.homeNum}}</p>
+        <p class="text-success fw-bolder">Товаров в наличии: <span class="text-primary">{{item.products.length}}</span></p>
+        <a routerLink="../shops/{{item.id}}" class="btn btn-primary ">К списку</a>
+      </div>
+    </div>
+  </div>
+</div>

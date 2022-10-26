@@ -1,0 +1,20 @@
+<div class="container-fluid px-4 mt-5">
+  <h1 class="text-center">Детали продукта</h1>
+  <div class="row row-border flex-column align-items-center justify-content-center">
+    <div class="col-12 col-sm-4 my-4">
+      <div class="d-flex col-border justify-content-between">
+        <div class="d-block p-3 ">
+          <h2 class="text-center">Товар: "{{product.name}}"</h2>
+          <p class="text-dark">Цвет: {{product.color}}</p>
+          <p class="text-success fw-bolder">Цена: {{product.price}}</p>
+        </div>
+        <div class="d-block p-3">
+          <h2 class="text-center">Магазин: "{{shop.name}}"</h2>
+          <p>Город: {{shop.city}}</p>
+          <p>Улица: {{shop.street}}</p>
+          <p>Номер дома: {{shop.homeNum}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
